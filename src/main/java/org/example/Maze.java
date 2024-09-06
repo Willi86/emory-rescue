@@ -64,6 +64,14 @@ public class Maze {
         if (gem1 != null && player.getX() == gem1[0] && player.getY() == gem1[1]) {
             System.out.println("You found a gem!");
             gem1 = null;
+            System.out.println("Checking for sword removal...");
+
+            // Check if the sword is still in the game
+            System.out.println(" \uD83D\uDE06 \uD83D\uDE06 \uD83D\uDE06The sword disappears as you pick up the gem! \uD83D\uDE06 \uD83D\uDE06 \uD83D\uDE06 \uD83D\uDE06");
+            System.out.println(" \uD83E\uDD23  \uD83E\uDD23 This means Monster will kill you and end the game! \uD83E\uDD23  \uD83E\uDD23 ");
+            System.out.println(" Don't worry, Write 'NEW' and the game will reset");
+            sword = null; // Completely remove the sword from the maze
+            player.setHasSword(false); // Player also loses the sword if they already have it
         }
         // Check for the second gem
         else if (gem2 != null && player.getX() == gem2[0] && player.getY() == gem2[1]) {

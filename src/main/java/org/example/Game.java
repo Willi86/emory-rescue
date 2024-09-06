@@ -20,21 +20,25 @@ public class Game {
 
         while (playing) { //while loop
             mazeEmoji.displayMaze(player, maze);  // Display the maze with player position
-            System.out.println("Choose your path: (N)orth, (E)ast, (S)outh, (W)est or (Q)uit: ");
+            System.out.println("Choose your path: (W)UP ^, (D)Right->, (S)Down v, (A)Left <- or (Q)uit: ");
             String choice = scanner.nextLine().toUpperCase();// Here it changes the input to uppercase , as i see it in this situation if-statement and  .equalsIgnoreCase() would make the same result
-
             switch (choice) {//  A switch statement with 4 cases to move the player and 1 exit case, based on user input
-                case "N":
+                case "W":
                     movePlayer(-1, 0);
                     break;
-                case "E":
+                case "D":
                     movePlayer(0, 1);
                     break;
                 case "S":
                     movePlayer(1, 0);
                     break;
-                case "W":
+                case "A":
                     movePlayer(0, -1);
+                    break;
+                case "NEW":
+                    System.out.println("OK I WILL RESET THE GAME FOR YOU ");
+                    Game game = new Game();
+                    game.start();
                     break;
                 case "Q":
                     System.out.println("You have chosen to exit the maze. Goodbye!");
