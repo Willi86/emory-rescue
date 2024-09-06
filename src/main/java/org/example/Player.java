@@ -33,9 +33,9 @@ public class Player { // this is the player class
         this.hasSword = hasSword;
     }
 
-    public boolean isEmoryRescued() {
+    /*public boolean isEmoryRescued() {
         return emoryRescued;
-    }
+    }*/
 
     public void rescueEmory() {
         this.emoryRescued = true;
